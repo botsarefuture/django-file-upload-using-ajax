@@ -11,13 +11,9 @@ def index(request):
 
 def upload_file(request):
     file = request.FILES.get("file")
-
-    # fss = FileSystemStorage()
-    # filename = fss.save(file.name, file)
-    # url = fss.url(filename)
-    print(file.name)
-    data = ContentFile(base64.b64decode(file), name=file.name) 
-    FileModel.objects.create(doc=data)
-    print(data)
-    return JsonResponse({"link": data})
+    f = open(file.name, "wb")
+    for chunk in file.chunks():
+        f.write(chunk)
+    f.close()
+    return JsonResponse({"link": "https://google.com"})
 
