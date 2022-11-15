@@ -24,12 +24,11 @@ function sendFiles(files){
     resetProgressBar();
     var req = new XMLHttpRequest();       
     req.upload.addEventListener("progress", updateProgress);
-    req.open("POST", "/uploadFile");
+    req.open("POST", "/upload/");
     var form = new FormData();
     for(var file = 0; file < files.length; file++){         
           
         form.append("file" + file, files[file], files[file].name);
-          
     } 
     req.send(form);  
 }
