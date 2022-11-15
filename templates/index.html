@@ -2,16 +2,18 @@
 <html lang="en">
 {% load static %}
 <head>
-    <link rel="stylesheet" src="{% static 'index.css' %}">
     <title>Node.js Upload Files with Progress Bar</title>
 </head>
+<link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
 
+<style>
+    body {background-color: #75D0F1;}
+</style>
 <body>
     <h1>Check The Progress of Uploaded Files</h1>   
      
     <div>
-        <span>Select files to upload</span>
-        <input type="button" class="chooseFiles" value="Select..." />
+        <input type="button" class="btn chooseFiles" value="Select files to upload" />
         <div class="progressUpload"></div>
     </div>
     <script>// TODO make this work, and make html use this statusbar
