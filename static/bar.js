@@ -5,6 +5,7 @@ var selectDialog = document.createElement("INPUT");
 selectDialog.setAttribute("type", "file");
 selectDialog.setAttribute("multiple", "true");
 selectDialog.style.display = "none";
+var submit = document.getElementsByClassName('submit')[0];
 var progressUpload = document.getElementsByClassName("progressUpload")[0];
 var progress;
 addProgressBar();

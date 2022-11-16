@@ -12,13 +12,15 @@
     <h1>Check The Progress of Uploaded Files</h1>   
     <h1 id="text1"></h1>
     <div>
-        <input type="button" class="btn chooseFiles" value="Select files to upload" />
+        <input type="button" class="btn chooseFiles" value="Select files to upload"/>
+        <input type="button" class="btn submit" value="submit"/>
         <div class="progressUpload"></div>
     </div>
     <script>// TODO make this work, and make html use this statusbar
 
         var browse = document.getElementsByClassName('chooseFiles')[0];
         var selectDialog = document.createElement("INPUT");
+        var submit = document.getElementsByClassName('submit')[0];
         selectDialog.setAttribute("type", "file");
         selectDialog.setAttribute("multiple", "true");
         selectDialog.style.display = "none";
@@ -30,12 +32,11 @@
             selectDialog.click();
               
         });
-          
-        selectDialog.addEventListener("change", function(){
-              
+        submit.addEventListener("click", function(){
+
             sendFiles(selectDialog.files);
-          
-        });
+
+        })
           
         function sendFiles(files){
               
