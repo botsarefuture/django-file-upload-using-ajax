@@ -2,15 +2,22 @@ progressupload{
     height: 20px;
     margin-top: 25px;
 }
+.h1 h2{
+    font-family: Arial, Helvetica, sans-serif;
+}
 .progress{
     background-color: green;
     width: 0%;
     height: 20px;
+    border: 2px;
+    border-color: white;
      
 }
 .progressBar{
     padding-top: 2px;
     padding-bottom: 2px;
+    border: 2px;
+    border-color: white;
 }
 .btn{
     border: 1px;
