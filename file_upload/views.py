@@ -11,10 +11,10 @@ def index(request):
 
 def upload_file(request):
     file = request.FILES.get("file0")
-    if file.name:
-        f = open(file.name, "wb")
-        for chunk in file.chunks():
-            f.write(chunk)
-        f.close()
+    f = open(file.name, "wb")
+    for chunk in file.chunks():
+        f.write(chunk)
+    f.close()
+
     return JsonResponse({"link": "https://google.com"})
 

@@ -4,3 +4,5 @@ from django.db import models
 
 class FileModel(models.Model):
     doc = models.FileField(upload_to='media/')
+    verified = models.BooleanField(default=False)
+    name = models.CharField(max_length=50, null=True, blank=True, default="kissa")
